@@ -2,7 +2,7 @@
 
 > Automated, containerized data pipeline combining rule-based and ML-driven anomaly detection — from synthetic transaction generation to an executive-ready Power BI dashboard.
 
-![Financial Anomaly Dashboard](financial_anomaly_dashboard.png)
+![Financial Anomaly Dashboard](dashboard.png)
 
 [![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white)](#)
 [![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)](#)
@@ -94,7 +94,7 @@ The Power BI dashboard provides:
 - **Monthly trend** — anomaly volume over time
 - **Transaction-level detail table** — sortable by anomaly score, with all three rule-based flags visible alongside the ML score, for direct finance team action
 
-![Dashboard Detail](financial_anomaly_dashboard.png)
+![Dashboard Detail](dashboard.png)
 
 ---
 
@@ -102,7 +102,7 @@ The Power BI dashboard provides:
 
 The DAG `financial_anomaly_pipeline` runs daily, with two tracked tasks:
 
-![Airflow DAG Graph](airflow_dag_graph.png)
+![Airflow DAG Graph](airflow.png)
 
 - `generate_transactions` — creates new synthetic transactions via Faker
 - `load_to_postgres` — loads transactions into the Supabase raw layer
@@ -113,7 +113,7 @@ Tagged: `finance`, `dbt`, `anomaly-detection` · Owner: `riyaz` · Schedule: `@d
 
 ## Data Lineage (dbt)
 
-![dbt Lineage Graph](dbt_lineage_graph.png)
+![dbt Lineage Graph](lineage.png)
 
 ```
 raw.raw_transactions → stg_transactions → mart_transactions
